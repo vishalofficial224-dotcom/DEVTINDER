@@ -27,6 +27,12 @@ app.use("/line" , (req, res) => {
         message: "line is working"
     })
 })
+
+app.use("/wine" , (req, res) => {
+    res.json({
+        message: "wine is working"
+    })
+})
 app.listen(3000, () => {
     console.log("server started at 3000")
 })
