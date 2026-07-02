@@ -9,6 +9,30 @@ app.use(cors());
 app.use(express.json());
 
 
+app.patch('/user', (req, res) => {
+    res.json({
+        message: "patching"
+    })
+})
+
+app.put('/user', (req, res) => {
+    res.json({
+        message: "putting"
+    })
+})
+
+app.head('/user', (req, res) => {
+    res.json({
+        message: "headadsfsdfsdf"
+    })
+})
+
+app.options('/user', (req, res) => {
+    res.json({
+        message: "a b c"
+    })
+})
+
 app.get('/user', (req, res) => {
     res.json({
         message: "this is user"
@@ -21,10 +45,9 @@ app.post('/user', (req, res) => {
     })
 })
 
-app.use('/', (req, res) => {
-    console.log('server is working');
+app.delete('/user', (req, res) => {
     res.json({
-        message: 'Server is working'
+        message: "user is deleted successfully!"
     })
 })
 
