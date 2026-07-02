@@ -9,30 +9,26 @@ app.use(cors());
 app.use(express.json());
 
 
-app.get('/', (req, res) => {
+app.get('/user', (req, res) => {
+    res.json({
+        message: "this is user"
+    })
+})
+
+app.post('/user', (req, res) => {
+    res.json({
+        message: "data saved successfully"
+    })
+})
+
+app.use('/', (req, res) => {
     console.log('server is working');
     res.json({
         message: 'Server is working'
     })
 })
 
-app.use("/home" , (req, res) => {
-    res.json({
-        message: "it's working"
-    })
-})
 
-app.use("/line" , (req, res) => {
-    res.json({
-        message: "line is working"
-    })
-})
-
-app.use("/wine" , (req, res) => {
-    res.json({
-        message: "wine is working"
-    })
-})
 app.listen(3000, () => {
     console.log("server started at 3000")
 })
